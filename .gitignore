@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Frontend - Node
+node_modules/
+frontend/node_modules/
+
+# Frontend - Build
+frontend/dist/
+frontend/.nuxt/
+frontend/.output/
+
+# Frontend - Cache
+frontend/.cache/
+frontend/coverage/
+frontend/.parcel-cache/
+
+# Frontend - Environment
+frontend/.env
+frontend/.env.local
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+*.bak
+*.tmp

@@ -1,0 +1,120 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-card .stat-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #409EFF;
+}
+
+.stat-card .stat-label {
+  font-size: 14px;
+  color: #999;
+  margin-top: 8px;
+}
+
+.question-item {
+  border: 1px solid #e4e7ed;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.question-type-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #ecf5ff;
+  color: #409EFF;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.option-item input[type="text"] {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.chart-container {
+  height: 400px;
+  margin: 20px 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state .el-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.share-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f7fa;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.share-link code {
+  flex: 1;
+  padding: 4px 8px;
+  background: #fff;
+  border-radius: 4px;
+  color: #409EFF;
+  word-break: break-all;
+}
