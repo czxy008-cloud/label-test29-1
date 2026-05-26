@@ -166,6 +166,21 @@ class VoteStatisticsResponse(BaseModel):
     statistics: dict  # 包含各问题的统计数据
 
 
+class DraftVoteItem(BaseModel):
+    """草稿中的单项投票数据"""
+    question_id: int
+    question_type: str = Field(..., description="问题类型")
+    option_ids: Optional[List[int]] = None
+    text_value: Optional[str] = None
+
+
+class DraftResponse(BaseModel):
+    """草稿响应"""
+    survey_id: int
+    updated_at: Optional[datetime] = None
+    votes: List[DraftVoteItem]
+
+
 # =====================================================================
 # 分享链接 Schema
 # =====================================================================

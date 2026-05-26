@@ -41,6 +41,15 @@ export const voteApi = {
   // 提交投票
   submit: (data) => request.post('/votes', data),
 
+  // 保存草稿
+  saveDraft: (data) => request.post('/votes/draft', data),
+
+  // 获取草稿
+  getDraft: (surveyId) => request.get(`/votes/draft/survey/${surveyId}`),
+
+  // 删除草稿
+  deleteDraft: (surveyId) => request.delete(`/votes/draft/survey/${surveyId}`),
+
   // 获取投票统计
   getStatistics: (surveyId) => request.get(`/votes/survey/${surveyId}/statistics`),
 

@@ -106,7 +106,15 @@ class Vote(Base):
     text_value = Column(Text, nullable=True)
     voter_session = Column(String(100), nullable=False)
     voter_id = Column(Integer, ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
+    status = Column(String(20), nullable=False, default="submitted", server_default="submitted", index=True)
     voted_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        CheckConstraint(
+            "status IN ('draft', 'submitted')",
+            name="chk_vote_status"
+        ),
+    )
 
     # 关联关系
     survey = relationship("Survey", back_populates="votes")

@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS votes (
     text_value      TEXT,                                             -- 填空题的文本值（选择题为NULL）
     voter_session   VARCHAR(100) NOT NULL,                            -- 投票者会话标识（用于匿名投票去重）
     voter_id        INTEGER      REFERENCES users(id) ON DELETE SET NULL,            -- 登录用户ID（匿名投票为NULL）
+    status          VARCHAR(20)  NOT NULL DEFAULT 'submitted',        -- 投票状态: draft(草稿)/submitted(已提交)
     voted_at        TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP  -- 投票时间
 );
 
@@ -99,6 +100,11 @@ CREATE INDEX IF NOT EXISTS idx_votes_survey_id    ON votes(survey_id);
 CREATE INDEX IF NOT EXISTS idx_votes_question_id  ON votes(question_id);
 CREATE INDEX IF NOT EXISTS idx_votes_option_id    ON votes(option_id);
 CREATE INDEX IF NOT EXISTS idx_votes_voter_id     ON votes(voter_id);
+CREATE INDEX IF NOT EXISTS idx_votes_status       ON votes(status);
+
+-- status 的约束检查
+ALTER TABLE votes ADD CONSTRAINT chk_vote_status
+    CHECK (status IN ('draft', 'submitted'));
 
 -- =====================================================================
 -- 触发器：自动更新 updated_at 字段
